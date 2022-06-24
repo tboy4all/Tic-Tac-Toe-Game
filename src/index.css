@@ -4,12 +4,12 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 38em) {
   html {
     font-size: 56.25%;
   }
 }
-@media only screen and (max-width: 18.75em) {
+@media only screen and (max-width: 19em) {
   html {
     font-size: 35%;
   }

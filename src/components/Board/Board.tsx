@@ -11,7 +11,7 @@ const Board = () => {
       <div id='backdrop' className='backdrop d-none'>
         &nbsp;
       </div>
-      <section className='gameplay container d-none ' id='gameplay'>
+      <section className='gameplay container '>
         <div className='gameplay__xo'>
           <div className='logo'>
             <div className='logo__icon'>
@@ -19,7 +19,7 @@ const Board = () => {
             </div>
           </div>
         </div>
-        <div id='gameplay-turn' className='gameplay__turn heading-xs'>
+        <div className='gameplay__turn heading-xs'>
           <div className='gameplay__turn-icon'>
             <img src={cancelIcon} alt='icon-change' />
             <div>Turn</div>
@@ -41,14 +41,20 @@ const Board = () => {
           <div className='gameplay__card'></div>
           <div className='gameplay__card'></div>
         </div>
-        <div id='x-win' className='gameplay__win'></div>
-        <div id='tie' className='gameplay__tie'></div>
-        <div id='o-win' className='gameplay__loss'></div>
+        <div id='x-win' className='gameplay__win'>
+          X (cpu)
+        </div>
+        <div id='tie' className='gameplay__tie'>
+          Ties
+        </div>
+        <div id='o-win' className='gameplay__loss'>
+          O (you)
+        </div>
         <div
           id='opponent-message'
           className='gameplay__opponent-message d-none'
         >
-          <p>Your opponent is thinking</p>
+          <p>Whats your next move</p>
           <img src={loadingIcon} alt='Your opponent message' />
         </div>
       </section>

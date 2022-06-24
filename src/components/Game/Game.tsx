@@ -1,4 +1,5 @@
 import './Game.css'
+import { FC } from 'react'
 
 // const restartIcon = require('../../assets/restart.png')
 const logoIcon = require('../../assets/logo.png')
@@ -6,7 +7,11 @@ const logoIcon = require('../../assets/logo.png')
 const cancelIcon = require('../../assets/icon-x.png')
 const circleIcon = require('../../assets/icon-o.png')
 
-const Game = () => {
+type BoardPros = {
+  setGameScreen: Function
+}
+
+const Game: FC<BoardPros> = ({ setGameScreen }) => {
   return (
     <>
       {/*  GAME START SECTION */}
@@ -39,7 +44,11 @@ const Game = () => {
         </div>
 
         <div className='game-start__buttons'>
-          <button id='vs-cpu' className='btn btn--yellow'>
+          <button
+            id='vs-cpu'
+            className='btn btn--yellow'
+            onClick={() => setGameScreen('board')}
+          >
             New game (vs cpu)
           </button>
           <button id='vs-player' className='btn btn--blue'>
