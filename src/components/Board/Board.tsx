@@ -28,11 +28,8 @@ const Board = () => {
             <div>Turn</div>
           </div>
         </div>
-        <div className='gameplay__restart'>
-          <div
-            className='gameplay__restart-icon'
-            onClick={() => setIsOpen(!isOpen)}
-          >
+        <div className='gameplay__restart' onClick={() => setIsOpen(!isOpen)}>
+          <div className='gameplay__restart-icon'>
             <img src={restartIcon} alt='icon-restart' />
           </div>
           {isOpen && <ResetModal setIsOpen={setIsOpen} />}
