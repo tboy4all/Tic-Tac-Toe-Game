@@ -1,4 +1,6 @@
 import './Board.css'
+import React, { useState } from 'react'
+import ResetModal from '../Modal/Modal'
 
 const restartIcon = require('../../assets/restart.png')
 const logoIcon = require('../../assets/logo.png')
@@ -6,11 +8,12 @@ const loadingIcon = require('../../assets/loading.gif')
 const cancelIcon = require('../../assets/icon-x.png')
 
 const Board = () => {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
-      <div id='backdrop' className='backdrop d-none'>
+      {/* <div id='backdrop' className='backdrop d-none'>
         &nbsp;
-      </div>
+      </div> */}
       <section className='gameplay container '>
         <div className='gameplay__xo'>
           <div className='logo'>
@@ -25,12 +28,17 @@ const Board = () => {
             <div>Turn</div>
           </div>
         </div>
-        <div id='restart-btn' className='gameplay__restart'>
-          <div className='gameplay__restart-icon'>
+        <div className='gameplay__restart'>
+          <div
+            className='gameplay__restart-icon'
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <img src={restartIcon} alt='icon-restart' />
           </div>
+          {isOpen && <ResetModal setIsOpen={setIsOpen} />}
+          {/* <ResetModal setIsOpen={setIsOpen} /> */}
         </div>
-        <div id='gameplay-board' className='gameplay__board'>
+        <div className='gameplay__board'>
           <div className='gameplay__card'></div>
           <div className='gameplay__card'></div>
           <div className='gameplay__card'></div>
@@ -41,19 +49,10 @@ const Board = () => {
           <div className='gameplay__card'></div>
           <div className='gameplay__card'></div>
         </div>
-        <div id='x-win' className='gameplay__win'>
-          X (cpu)
-        </div>
-        <div id='tie' className='gameplay__tie'>
-          Ties
-        </div>
-        <div id='o-win' className='gameplay__loss'>
-          O (you)
-        </div>
-        <div
-          id='opponent-message'
-          className='gameplay__opponent-message d-none'
-        >
+        <div className='gameplay__win'>X (cpu)</div>
+        <div className='gameplay__tie'>T Ties</div>
+        <div className='gameplay__loss'>O (you)</div>
+        <div className='gameplay__opponent-message d-none'>
           <p>Whats your next move</p>
           <img src={loadingIcon} alt='Your opponent message' />
         </div>

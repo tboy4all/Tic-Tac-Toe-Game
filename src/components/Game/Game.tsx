@@ -15,7 +15,7 @@ const Game: FC<BoardPros> = ({ setGameScreen }) => {
   return (
     <>
       {/*  GAME START SECTION */}
-      <section id='game-start' className='game-start container d-block'>
+      <section className='game-start container d-block'>
         <div className='logo'>
           <a className='logo__link' href='index.html' aria-label='logo'>
             <div className='logo__icon'>
@@ -28,13 +28,13 @@ const Game: FC<BoardPros> = ({ setGameScreen }) => {
           <header className='game-start__header'>
             <h4 className='heading-xs'>Pick player 1's mark</h4>
           </header>
-          <div id='game-start-marks' className='game-start__marks'>
-            <div id='x' className='game-start__x-mark'>
+          <div className='game-start__marks'>
+            <div className='game-start__x-mark'>
               <div className='game-start__x-icon'>
                 <img src={cancelIcon} alt='icon-x' />
               </div>
             </div>
-            <div id='o' className='game-start__o-mark selected'>
+            <div className='game-start__o-mark selected'>
               <div className='game-start__o-icon'>
                 <img src={circleIcon} alt='icon-o-default' />
               </div>
@@ -45,15 +45,12 @@ const Game: FC<BoardPros> = ({ setGameScreen }) => {
 
         <div className='game-start__buttons'>
           <button
-            id='vs-cpu'
             className='btn btn--yellow'
             onClick={() => setGameScreen('board')}
           >
             New game (vs cpu)
           </button>
-          <button id='vs-player' className='btn btn--blue'>
-            New game (vs player)
-          </button>
+          <button className='btn btn--blue'>New game (vs player)</button>
         </div>
       </section>
     </>
