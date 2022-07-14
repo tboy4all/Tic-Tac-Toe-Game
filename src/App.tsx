@@ -7,6 +7,7 @@ import Game from './components/Game/Game'
 function App() {
   const [gameScreen, setGameScreen] = useState('game')
   return (
+    // REVIEW: smart way to implement multipage
     <div className='App'>
       {gameScreen === 'game' && <Game setGameScreen={setGameScreen} />}
       {gameScreen === 'board' && <Board />}

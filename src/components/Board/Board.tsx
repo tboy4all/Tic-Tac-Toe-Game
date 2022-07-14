@@ -2,6 +2,7 @@ import './Board.css'
 import React, { useState } from 'react'
 import ResetModal from '../Modal/Modal'
 
+// REVIEW: use "import" not "require"?
 const restartIcon = require('../../assets/restart.png')
 const logoIcon = require('../../assets/logo.png')
 const loadingIcon = require('../../assets/loading.gif')
@@ -35,6 +36,7 @@ const Board = () => {
           {isOpen && <ResetModal setIsOpen={setIsOpen} />}
           {/* <ResetModal setIsOpen={setIsOpen} /> */}
         </div>
+        {/* REVIEW: your styles are good but you did not implement the game brother */}
         <div className='gameplay__board'>
           <div className='gameplay__card'></div>
           <div className='gameplay__card'></div>
